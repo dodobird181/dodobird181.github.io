@@ -11,32 +11,7 @@
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
         <!--Load my CSS-->
-        <style>
-            nav {
-                background-color: #5A7594;
-                color: #EEF7F7;
-            }
-            body {
-                background-color: #EEF7F7;
-                font-family: 'IBM Plex Sans', sans-serif;
-            }
-            footer {
-                background-color: #5A7594;
-                color: #EEF7F7;
-                height: 4%;  /* footer height */
-                display: block;
-                box-sizing: border-box;
-                position: relative;
-                width: 100%;
-            }
-            .content-wrapper {
-                height: 96%;
-            }
-            .avatar-size {
-                width: 200px;
-                height: 200px;
-            }
-        </style>
+        <link rel="stylesheet" href="/style.css">
     </head>
     <body class="mx-48">
         <div class="content-wrapper">
@@ -49,7 +24,6 @@
                     </div>
                     <!--Navbar-->
                     <div class="w-1/2 pt-3 text-right mr-24">
-                        <a href="../" class="mr-3 hidden text-xl font-medium" id="homeButton">Home</a>
                         <a href="../about/" class="mt-3 mr-3 hidden text-xl font-medium" id="aboutButton">About</a>
                         <a href="../projects/" class="mr-3 hidden text-xl font-medium" id="projectsButton">Projects</a>
                     </div>
@@ -67,23 +41,19 @@
                     </div>
                 </div>
             </nav>
-
-            <p class="mt-10 mx-48 text-xl">
-                These are my projects!
-            </p>
         </div>
 
         <footer class="text-sm pt-2 flex">
             <p class="ml-8 w-1/2" id="copyrightNotice">© Copyright 2020</p>
             <div class="text-right w-1/2">
-                <a href="https://github.com/dodobird181" target="_blank" class="mr-4">
-                    <i class="mr-1 fab fa-github-square" id="gitIcon"></i>Github
+                <a href="https://github.com/dodobird181" target="_blank" class="mr-4" id="footerGit">
+                    Github
                 </a>
-                <a href="https://www.linkedin.com/in/samuel-morris-2b97711a3/" target="_blank" class="mr-4">
-                    <i class="mr-1 fab fa-linkedin" id="linkedInIcon"></i>LinkedIn
+                <a href="https://www.linkedin.com/in/samuel-morris-2b97711a3/" target="_blank" class="mr-4" id="footerLinkedIn">
+                    LinkedIn
                 </a>
-                <a href="../contact/" target="_blank" class="mr-8">
-                    <i class="mr-1 fas fa-envelope" id="mailIcon"></i>Contact Me
+                <a href="../contact/" target="_blank" class="mr-8" id="footerContact">
+                    Contact Me
                 </a>
             </div>
         </footer>

@@ -12,6 +12,11 @@ initButton(document.getElementById("nameButton"))
 initButton(document.getElementById("aboutButton"))
 initButton(document.getElementById("projectsButton"))
 
+// Init footer links
+initButton(document.getElementById("footerGit"))
+initButton(document.getElementById("footerLinkedIn"))
+initButton(document.getElementById("footerContact"))
+
 function initButton(buttonElement, mainColor=MAIN_COLOR, mouseOverColor=MOUSE_OVER_COLOR, mouseDownColor=MOUSE_DOWN_COLOR){
 
     if (buttonElement == null){
