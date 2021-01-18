@@ -1,5 +1,3 @@
-
-
 const MAIN_COLOR = "#EEF7F7"
 const MOUSE_OVER_COLOR = "#B2D6D2"
 const MOUSE_DOWN_COLOR = "#C2B7C6"
