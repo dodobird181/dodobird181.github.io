@@ -1,16 +1,12 @@
-const MAIN_COLOR = "#1b263b"
-const MOUSE_OVER_COLOR = "#778da9"
-const MOUSE_DOWN_COLOR = "#0d1b2a"
-const TEXT_COLOR = "#e0e1dd"
-const PUSHED_COLOR = "#"
+const MAIN_COLOR = "#EEF7F7"
+const MOUSE_OVER_COLOR = "#B2D6D2"
+const MOUSE_DOWN_COLOR = "#C2B7C6"
 
 // Init menu buttons
 initButton(document.getElementById("homeButton"))
 initButton(document.getElementById("aboutButton"))
 initButton(document.getElementById("projectsButton"))
-initButton(document.getElementById("resumeButton"))
 initButton(document.getElementById("contactButton"))
-initButton(document.getElementById("pushedButton"), PUSHED_COLOR, PUSHED_COLOR, PUSHED_COLOR)
 
 function initButton(buttonElement, mainColor=MAIN_COLOR, mouseOverColor=MOUSE_OVER_COLOR, mouseDownColor=MOUSE_DOWN_COLOR){
 
@@ -18,25 +14,24 @@ function initButton(buttonElement, mainColor=MAIN_COLOR, mouseOverColor=MOUSE_OV
         return
     }
 
-    // Main color
-    buttonElement.style.backgroundColor = mainColor
+    // Main Color
+    buttonElement.style.color = mainColor
     buttonElement.onmouseleave = (event) => {
-        buttonElement.style.backgroundColor = mainColor
+        buttonElement.style.color = mainColor
+    }
+
+    // Mouse Over Color
+    buttonElement.onmouseover = (event) => {
+        buttonElement.style.color = mouseOverColor
     }
     buttonElement.onmouseup = (event) => {
-        buttonElement.style.backgroundColor = mouseOverColor
+        buttonElement.style.color = mouseOverColor
     }
 
-    // Event colors
-    buttonElement.onmouseover = (event) => {
-        buttonElement.style.backgroundColor = mouseOverColor
-    }
+    // Mouse Down Color
     buttonElement.onmousedown = (event) => {
-        buttonElement.style.backgroundColor = mouseDownColor
+        buttonElement.style.color = mouseDownColor
     }
-
-    // Text color
-    buttonElement.style.color = TEXT_COLOR
 
     // Show button
     buttonElement.style.display = "inline-block"
