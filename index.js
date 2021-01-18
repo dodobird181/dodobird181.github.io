@@ -1,4 +1,4 @@
-import anime from "./node_modules/animejs/lib/anime.es.js";
+
 
 const MAIN_COLOR = "#EEF7F7"
 const MOUSE_OVER_COLOR = "#B2D6D2"
