@@ -44,27 +44,24 @@ initIcon(document.getElementById("gitIcon"))
 initIcon(document.getElementById("linkedInIcon"))
 initIcon(document.getElementById("mailIcon"))
 
-// Create anime timeline
-let tl = anime.timeline({
-    easing: 'easeOutExpo',
-    duration: 200
-});
-
 function initIcon(icon){
     if (icon == null){
         return
     }
 
+    let intervalNum = null
+
     icon.onmouseleave = (event) => {
-        tl.add({
-            targets: icon,
-            color: MAIN_COLOR,
-          });
+        clearInterval(intervalNum)
+        icon.style.color = MAIN_COLOR
     }
     icon.onmouseover = (event) => {
-        tl.add({
-            targets: icon,
-            color: '#C2B7C6',
-          });
+        let i = icon
+        let h = 0
+        intervalNum = setInterval(() => {
+            console.log("changing color! ==> " + h)
+            h += 2
+            i.style.color = "hsl(" + h + ", 100%, 80%)"
+        }, 2)
     }
 }
