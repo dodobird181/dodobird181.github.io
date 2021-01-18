@@ -1,12 +1,16 @@
-const MAIN_COLOR = "#EEF7F7"
-const MOUSE_OVER_COLOR = "#B2D6D2"
+const MAIN_COLOR = "#EEEEEE"
+const MOUSE_OVER_COLOR = "#ffd369"
 const MOUSE_DOWN_COLOR = "#C2B7C6"
 
+// Update copyright notice based on the year
+var d = new Date();
+var n = d.getFullYear();
+document.getElementById("copyrightNotice").innerHTML = "© Copyright " + n + "."
+
 // Init menu buttons
-initButton(document.getElementById("homeButton"))
+initButton(document.getElementById("nameButton"))
 initButton(document.getElementById("aboutButton"))
 initButton(document.getElementById("projectsButton"))
-initButton(document.getElementById("contactButton"))
 
 function initButton(buttonElement, mainColor=MAIN_COLOR, mouseOverColor=MOUSE_OVER_COLOR, mouseDownColor=MOUSE_DOWN_COLOR){
 

@@ -10,32 +10,31 @@
         <!--Import tailwind's CSS clases-->
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
-        <!--Load generic CSS stuffs-->
+        <!--Load my CSS-->
         <style>
             nav {
                 background-color: #5A7594;
-                font-family: 'IBM Plex Sans', sans-serif;
                 color: #EEF7F7;
             }
             body {
                 background-color: #EEF7F7;
+                font-family: 'IBM Plex Sans', sans-serif;
             }
             footer {
                 background-color: #5A7594;
                 color: #EEF7F7;
-                height: 42px;  /* footer height */
+                height: 4%;  /* footer height */
                 display: block;
                 box-sizing: border-box;
                 position: relative;
                 width: 100%;
             }
             .content-wrapper {
-                height: auto;
-                margin: 0 auto -40px; /* footer height + space */
-                min-height: 100%;
-                padding: 0 0 40px; /* footer height + space */
-                box-sizing: border-box;
-                overflow: auto;
+                height: 96%;
+            }
+            .avatar-size {
+                width: 200px;
+                height: 200px;
             }
         </style>
     </head>
@@ -44,30 +43,49 @@
             <!--Menu Bar Element-->
             <nav class="py-3">
                 <div class="flex">
+                    <!--Home-->
                     <div class="w-1/2 inline-block ml-48">
-                        <a href="../" class="hidden text-5xl font-bold" id="homeButton">Samuel Morris</a>
+                        <a href="../" class="hidden text-5xl font-bold" id="nameButton">Samuel Morris</a>
                     </div>
-                    <div class="w-1/2 pt-3 text-right mr-48">
+                    <!--Navbar-->
+                    <div class="w-1/2 pt-3 text-right mr-24">
+                        <a href="../" class="mr-3 hidden text-xl font-medium" id="homeButton">Home</a>
                         <a href="../about/" class="mt-3 mr-3 hidden text-xl font-medium" id="aboutButton">About</a>
                         <a href="../projects/" class="mr-3 hidden text-xl font-medium" id="projectsButton">Projects</a>
-                        <a href="../contact/" class="hidden text-xl font-medium" id="contactButton">Contact</a>
+                    </div>
+                    <!--Icons-->
+                    <div class="text-3xl pt-6 mr-24 flex">
+                        <a href="https://github.com/dodobird181" target="_blank">
+                            <i class="mr-3 fab fa-github-square" id="gitIcon"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/samuel-morris-2b97711a3/" target="_blank">
+                            <i class="mr-3 fab fa-linkedin" id="linkedInIcon"></i>
+                        </a>
+                        <a href="../contact/" target="_blank">
+                            <i class="fas fa-envelope" id="mailIcon"></i>
+                        </a>
                     </div>
                 </div>
             </nav>
 
-            <h1 class="text-center mt-20">I will show my projects here!</h1>
+            <p class="mt-10 mx-48 text-xl">
+                These are my projects!
+            </p>
         </div>
 
-        <footer class="text-3xl text-right">
-            <a href="https://github.com/dodobird181" target="_blank">
-                <i class="mr-2 fab fa-github-square" id="gitIcon"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/samuel-morris-2b97711a3/" target="_blank">
-                <i class="mr-2 fab fa-linkedin" id="linkedInIcon"></i>
-            </a>
-            <a href="mailto:samuel.morris2@mail.mcgill.ca" target="_blank">
-                <i class="mr-48 fas fa-envelope" id="mailIcon"></i>
-            </a>
+        <footer class="text-sm pt-2 flex">
+            <p class="ml-8 w-1/2" id="copyrightNotice">© Copyright 2020</p>
+            <div class="text-right w-1/2">
+                <a href="https://github.com/dodobird181" target="_blank" class="mr-4">
+                    <i class="mr-1 fab fa-github-square" id="gitIcon"></i>Github
+                </a>
+                <a href="https://www.linkedin.com/in/samuel-morris-2b97711a3/" target="_blank" class="mr-4">
+                    <i class="mr-1 fab fa-linkedin" id="linkedInIcon"></i>LinkedIn
+                </a>
+                <a href="../contact/" target="_blank" class="mr-8">
+                    <i class="mr-1 fas fa-envelope" id="mailIcon"></i>Contact Me
+                </a>
+            </div>
         </footer>
 
         <!--Load javascript-->

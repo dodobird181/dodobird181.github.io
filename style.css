@@ -1,0 +1,25 @@
+body, nav, footer{
+    color: #eeeeee;
+}
+nav {
+    background-color: #393e46;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+body {
+    background-color: #222831;
+}
+footer {
+    background-color: #393e46;
+    height: 4%;  /* footer height */
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+}
+.content-wrapper {
+    height: 96%;
+}
+.avatar-size {
+    width: 200px;
+    height: 200px;
+}
