@@ -44,15 +44,17 @@
                     </div>
                 </div>
             </nav>
+
+
+            <div class="g-recaptcha" data-sitekey="6Lf4dTMaAAAAAGoiuk408x3rOOKvimqcDmUC2Ngn"></div>
+            <form action="https://formspree.io/f/mgepdaeo" method="POST">
+                <input type="text" name="name" class="bg-red-500 text-white">
+                <input type="email" name="_replyto" class="bg-red-400 text-white">
+                <input type="submit" value="Submit" class="bg-red-400 text-white">
+            </form>
+
+
         </div>
-
-
-        <div class="g-recaptcha" data-sitekey="6Lf4dTMaAAAAAGoiuk408x3rOOKvimqcDmUC2Ngn"></div>
-        <form action="https://formspree.io/f/mgepdaeo" method="POST">
-            <input type="text" name="name">
-            <input type="email" name="_replyto">
-            <input type="submit" value="Send">
-          </form>
 
         <footer class="text-sm pt-2 flex">
             <p class="ml-8 w-1/2" id="copyrightNotice">© Copyright 2020</p>
@@ -70,6 +72,7 @@
         </footer>
 
         <!--Load javascript-->
-	    <script type="module" src="../index.js"></script>
+        <script type="module" src="../index.js"></script>
+        <script type="module" src="./captcha.js"></script>
     </body>
 </HTML>
