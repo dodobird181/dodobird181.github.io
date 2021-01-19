@@ -3,5 +3,7 @@
 
 let submitButton = document.getElementById("submitButton")
 setInterval(() => {
-    console.log(grecaptcha.getResponse())
+    if (grecaptcha.getResponse() == ""){
+        submitButton.style.display = "block"
+    }
 }, 2000)
