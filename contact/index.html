@@ -12,6 +12,9 @@
 
         <!--Load my CSS-->
         <link rel="stylesheet" href="/style.css">
+
+        <!--reCaptcha API-->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
     <body class="mx-48">
         <div class="content-wrapper">
@@ -42,6 +45,14 @@
                 </div>
             </nav>
         </div>
+
+
+        <div class="g-recaptcha" data-sitekey="6Lf4dTMaAAAAAGoiuk408x3rOOKvimqcDmUC2Ngn"></div>
+        <form action="https://formspree.io/f/mgepdaeo" method="POST">
+            <input type="text" name="name">
+            <input type="email" name="_replyto">
+            <input type="submit" value="Send">
+          </form>
 
         <footer class="text-sm pt-2 flex">
             <p class="ml-8 w-1/2" id="copyrightNotice">© Copyright 2020</p>
