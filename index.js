@@ -66,9 +66,26 @@ function initIcon(icon){
         let i = icon
         let h = 0
         intervalNum = setInterval(() => {
-            console.log("changing color! ==> " + h)
             h += 2
             i.style.color = "hsl(" + h + ", 100%, 80%)"
+        }, 2)
+    }
+}
+
+// Rainbowify submit button's backgroundColor
+let sub = document.getElementById("submitButton")
+if(sub != null){
+    let intervalNum = null
+    sub.onmouseleave = (event) => {
+        clearInterval(intervalNum)
+        sub.style.backgroundColor = MAIN_COLOR
+    }
+    sub.onmouseover = (event) => {
+        let i = sub
+        let h = 0
+        intervalNum = setInterval(() => {
+            h += 2
+            i.style.backgroundColor = "hsl(" + h + ", 100%, 80%)"
         }, 2)
     }
 }

@@ -1,0 +1,15 @@
+form{
+    align-self: center;
+    display: inline-block;
+    background-color: #393e46;
+    color: #eeeeee;
+    width: 65%;
+    max-height: 80%;
+}
+input, textarea{
+    background-color: #eeeeee;
+    width: 75%;
+    margin-bottom: 10px;
+    color: #393e46;
+    padding: 8px;
+}
