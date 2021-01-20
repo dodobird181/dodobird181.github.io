@@ -1,5 +1,6 @@
 body, nav, footer{
     color: #eeeeee;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 nav {
     background-color: #393e46;
@@ -23,10 +24,19 @@ footer {
     width: 200px;
     height: 200px;
 }
-.triangle {
-	width: 0;
-	height: 0;
-	border-left: 25px solid transparent;
-	border-right: 25px solid transparent;
-	border-bottom: 50px solid #EC4899;
+
+.rect1{
+    background-color: #ffc93c;
+}
+.rect2{
+    background-color: #27496d;
+}
+.rect3{
+    background-color: #07689f;
+}
+.ball1{
+    background-color: #21bf73;
+}
+.ball2{
+    background-color: #c70039;
 }
