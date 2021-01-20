@@ -55,12 +55,9 @@
                         I'll be happy to hear from you and will try to reply as soon as I can.
                     </p>
 
-                    <input type="email" name="_replyto" onclick="this.select()" value="Email">
-                    
-                    <textarea onclick="this.select()" type="text" name="message" cols="60" rows="5" class="mx-12">Message</textarea>
-
+                    <input type="email" name="_replyto" onclick="this.value=''" value="Email">
+                    <textarea onclick="this.value=''" type="text" name="message" cols="60" rows="5" class="mx-12">Message</textarea>
                     <div><div class="g-recaptcha inline-block mx-24 mb-2" id="myCaptcha" data-sitekey="6Lf4dTMaAAAAAGoiuk408x3rOOKvimqcDmUC2Ngn"></div></div>
-
                     <div>
                         <input 
                         type="submit" 
@@ -68,7 +65,6 @@
                         value="Submit" 
                         class="mx-24 w-1/6 mb-8">
                     </div>
-                
                 </form>
             </div>
 
