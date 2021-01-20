@@ -1,17 +1,17 @@
-
-
-const TIME_MULT = 750
+const TIME_MULT = 500
 const TIME_BASE = 500
 
-let body = document.getElementById("body")
-let centerX = document.body.style.width - (document.body.style.width/2)
-let centerY = document.body.style.height - (document.body.style.height/2)
 let DX = 0
 let DY = 0
+
 body.onmousemove = (e) => {
-        DX = (centerX - e.clientX) * -1
-        DY = (centerY - e.clientY) * -1 / 2
-        console.log(DX + ", " + DY)
+    let page = document.documentElement
+    let centerX = page.clientWidth - (page.clientWidth/2)
+    let centerY = page.clientHeight - (page.clientHeight/2)
+    console.log("centerX: " + centerX)
+    DX = (centerX - e.clientX) * -1
+    DY = (centerY - e.clientY) * -1 / 2
+    console.log(DX + ", " + DY)
 }
 
 let scaleRange = [1, 2]
