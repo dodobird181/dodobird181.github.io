@@ -12,6 +12,8 @@
 
         <!--Load my CSS-->
         <link rel="stylesheet" href="./style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     </head>
     <body class="mx-48">
         <div class="content-wrapper">
@@ -41,6 +43,18 @@
                     </div>
                 </div>
             </nav>
+
+            <div class="w-full mt-24">
+                <div class="rect1 bg-red-400 w-6 h-6 relative m-auto"></div>
+                <div class="rect2 bg-yellow-400 w-12 h-12 relative m-auto"></div>
+                <div class="rect3 bg-green-400 w-24 h-24 relative m-auto"></div>
+                <div class="rect4 bg-blue-400 w-32 h-32 relative m-auto"></div>
+
+                <div class="ball1 bg-yellow-800 w-6 h-6 relative m-auto rounded-full"></div>
+                <div class="ball2 bg-gray-400 w-12 h-12 relative m-auto rounded-full"></div>
+                <div class="ball3 bg-white w-24 h-24 relative m-auto rounded-full"></div>
+                <div class="ball4 triangle relative m-auto"></div>
+            </div>
         </div>
 
         <footer class="text-sm pt-2 flex">
@@ -59,6 +73,7 @@
         </footer>
 
         <!--Load javascript-->
-	    <script type="module" src="../index.js"></script>
+        <script type="module" src="../index.js"></script>
+        <script type="module" src="../animation.js"></script>
     </body>
 </HTML>
