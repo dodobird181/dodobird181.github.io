@@ -17,6 +17,10 @@ initButton(document.getElementById("footerGit"))
 initButton(document.getElementById("footerLinkedIn"))
 initButton(document.getElementById("footerContact"))
 
+// Init Projects page links
+initButton(document.getElementById("projectsBrickLink"))
+initButton(document.getElementById("projectsTicLink"))
+
 function initButton(buttonElement, mainColor=MAIN_COLOR, mouseOverColor=MOUSE_OVER_COLOR, mouseDownColor=MOUSE_DOWN_COLOR){
 
     if (buttonElement == null){

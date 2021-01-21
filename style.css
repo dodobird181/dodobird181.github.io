@@ -41,3 +41,7 @@ footer {
 .ball2{
     background-color: #c70039;
 }
+
+.hoverLink:hover{
+    color: #ffd369;
+}
