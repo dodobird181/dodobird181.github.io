@@ -3,7 +3,6 @@ const TIME_MULT = 1000
 const TIME_BASE = 1000
 
 //Randomly choose hue for the animated rectangles!
-
 colorify(getRealFrom(0, 360))
 
 function colorify(hue){

@@ -1,6 +1,6 @@
-const MAIN_COLOR = "#EEEEEE"
-const MOUSE_OVER_COLOR = "#ffd369"
-const MOUSE_DOWN_COLOR = "#C2B7C6"
+const MAIN_COLOR = "#c5c6c7"
+const MOUSE_OVER_COLOR = "#66fcf1"
+const MOUSE_DOWN_COLOR = "#45a29e"
 
 // Update copyright notice based on the year
 var d = new Date();

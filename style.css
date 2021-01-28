@@ -1,18 +1,15 @@
 body, nav, p, footer{
-    color: #eeeeee;
+    color: #c5c6c7;
     font-family: 'IBM Plex Sans', sans-serif;
 }
 nav {
-    background-color: #393e46;
+    background-color: #0b0c10;
     font-family: 'IBM Plex Sans', sans-serif;
 }
 body {
-    background-color: #aaaaaa;
-    margin-left: 5%;
-    margin-right: 5%;
 }
 footer {
-    background-color: #393e46;
+    background-color: #0b0c10;
     height: 4%;  /* footer height */
     display: block;
     box-sizing: border-box;
@@ -21,23 +18,22 @@ footer {
 }
 .content-wrapper {
     height: 96%;
-    background-color: #eeeeee;
+    background-color: #1f2833;
 }
 .avatar-size {
     width: 200px;
     height: 200px;
 }
 .hoverLink:hover{
-    color: #ffd369;
+    color: #66fcf1;
 }
 
 .vertical-center {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 55%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    margin-left: -5%;
   }
 
 .rect1{
