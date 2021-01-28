@@ -11,6 +11,7 @@ document.getElementById("copyrightNotice").innerHTML = "© Copyright " + n + "."
 initButton(document.getElementById("nameButton"))
 initButton(document.getElementById("aboutButton"))
 initButton(document.getElementById("projectsButton"))
+initButton(document.getElementById("resumeButton"))
 
 // Init footer links
 initButton(document.getElementById("footerGit"))
@@ -60,6 +61,14 @@ function initIcon(icon){
         return
     }
 
+    icon.onmouseleave = (event) => {
+        icon.style.color = MAIN_COLOR
+    }
+    icon.onmouseover = (event) => {
+        icon.style.color = MOUSE_OVER_COLOR
+    }
+
+    /*
     let intervalNum = null
 
     icon.onmouseleave = (event) => {
@@ -74,6 +83,7 @@ function initIcon(icon){
             i.style.color = "hsl(" + h + ", 100%, 80%)"
         }, 2)
     }
+    */
 }
 
 // Rainbowify submit button's backgroundColor

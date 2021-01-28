@@ -12,9 +12,7 @@
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
         <!--Load my CSS-->
-        <link rel="stylesheet" href="./style.css">
-
-        <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+        <link rel="stylesheet" href="/style.css">
 
         <!--Site Icons-->
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -22,8 +20,9 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
     </head>
-    <body id="body">
+    <body>
         <div class="content-wrapper">
+
             <!--Navbar-->
             <nav class="py-3">
                 <div class="flex text-center text-2xl">
@@ -56,14 +55,14 @@
                 </div>
             </nav>
 
-            <!--Animation Shapes-->
-            <div class="w-full absolute grid text-center vertical-center">
-                <!--Welcome Message-->
-                <p class="text-4xl z-50 select-none">Welcome.</p>
-                <div id="rect1" class="z-10 rect1 justify-self-center"></div>
-                <div id="rect2" class="z-20 rect2 justify-self-center"></div>
-                <div id="rect3" class="z-30 rect3 justify-self-center"></div>
+            <div class="text-center">
+                <p class="text-4xl pt-12 pb-6">Resume</p>
+                <iframe src="/res/resume.pdf" class="w-full h-full lg:w-1/2 block m-auto"></iframe>
+
+                <p class="text-4xl pt-12 pb-6">Transcript</p>
+                <iframe src="/res/transcript.pdf" class="w-full h-full lg:w-1/2 block m-auto"></iframe>
             </div>
+
         </div>
 
         <footer class="text-sm pt-2 flex">
@@ -82,7 +81,6 @@
         </footer>
 
         <!--Load javascript-->
-        <script type="module" src="../index.js"></script>
-        <script type="module" src="../animation.js"></script>
+	    <script type="module" src="../index.js"></script>
     </body>
 </HTML>
