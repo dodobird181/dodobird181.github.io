@@ -7,7 +7,9 @@ nav {
     font-family: 'IBM Plex Sans', sans-serif;
 }
 body {
-    background-color: #EEEEEE;
+    background-color: #aaaaaa;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 footer {
     background-color: #393e46;
@@ -19,7 +21,7 @@ footer {
 }
 .content-wrapper {
     height: 96%;
-    background-color: #393e46;
+    background-color: #eeeeee;
 }
 .avatar-size {
     width: 200px;
@@ -35,7 +37,7 @@ footer {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    transform: translateX(-12rem);
+    margin-left: -5%;
   }
 
 .rect1{
