@@ -15,8 +15,8 @@
 
     #dvd {
       position: absolute;
-      width: 100px;
-      height: 50px;
+      width: 200px;
+      height: 100px;
       will-change: transform;
       user-select: none;
       pointer-events: none;
@@ -30,41 +30,30 @@
   />
 
   <script>
-    const dvd = document.getElementById("dvd");
-    const speed = 2.5;
-    let dx = speed;
-    let dy = speed;
+    window.addEventListener('load', () => {
+      const dvd = document.getElementById("dvd");
+      const speed = 2.5;
+      let dx = speed;
+      let dy = speed;
 
-    // Get logo size once it's loaded
-    dvd.onload = () => {
-      start();
-    };
-
-    // Fallback if it loads instantly
-    if (dvd.complete) start();
-
-    let x = 0;
-    let y = 0;
-
-    function start() {
       const logoW = dvd.offsetWidth;
       const logoH = dvd.offsetHeight;
 
-      x = Math.random() * (window.innerWidth - logoW);
-      y = Math.random() * (window.innerHeight - logoH);
+      let x = Math.random() * (window.innerWidth - logoW);
+      let y = Math.random() * (window.innerHeight - logoH);
 
       function animate() {
         x += dx;
         y += dy;
 
-        // Bounce off left/right
         if (x + logoW >= window.innerWidth || x <= 0) {
           dx *= -1;
+          changeColor();
         }
 
-        // Bounce off top/bottom
         if (y + logoH >= window.innerHeight || y <= 0) {
           dy *= -1;
+          changeColor();
         }
 
         dvd.style.transform = `translate(${x}px, ${y}px)`;
@@ -72,8 +61,13 @@
         requestAnimationFrame(animate);
       }
 
+      function changeColor() {
+        const hue = Math.floor(Math.random() * 360);
+        dvd.style.filter = `hue-rotate(${hue}deg)`;
+      }
+
       animate();
-    }
+    });
   </script>
 </body>
 </html>
