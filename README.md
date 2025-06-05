@@ -1,2 +1,2 @@
-# Samuel Jack Morris
-Static hosting of HTML, CSS, and JS files for my portfolio website, courtesy of GitHub.
+# AUDIOfriend Website
+Statically hosted site for AUDIOfriend. Will eventually include a newsletter signup form and shop.
