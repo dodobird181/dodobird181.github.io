@@ -88,8 +88,13 @@
       let dx = speed;
       let dy = speed;
 
-      logo.style.width = '200px';
-      logo.style.height = '100px';
+      if (isMobile()){
+        logo.style.width = '400px';
+        logo.style.height = '200px';
+      } else {
+        logo.style.width = '200px';
+        logo.style.height = '100px';
+      }
       logo.style.fill = "#0ddb21";
       const logoRect = logo.getBoundingClientRect();
       let x = Math.random() * (window.innerWidth - logoRect.width);
