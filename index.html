@@ -50,9 +50,17 @@
   />
 
   <script>
+
+    function isMobile() {
+        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
     window.addEventListener('load', () => {
       const logo = document.getElementById("logo");
-      const speed = 3;
+      let speed = 3;
+      if (isMobile()){
+        speed = 6;
+      }
       let dx = speed;
       let dy = speed;
 
