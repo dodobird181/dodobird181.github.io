@@ -28,15 +28,15 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color: white;
+      background-color: black;
       height: 100%;
       width: 100%;
     }
 
     #logo {
       position: absolute;
-      width: 200px;
-      height: 100px;
+      width: 40%;
+      height: 40%;
       will-change: transform;
       user-select: none;
       pointer-events: none;
@@ -46,7 +46,7 @@
 <body>
   <img
     id="logo"
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/2560px-DVD_logo.svg.png"
+    src="https://raw.githubusercontent.com/dodobird181/dodobird181.github.io/e93a327eab25683213cd8cd86cb7e811386fe8c3/logo_full.svg"
   />
 
   <script>
@@ -58,8 +58,7 @@
     window.addEventListener('load', () => {
       const logo = document.getElementById("logo");
       const srcImages = [
-        "https://freight.cargo.site/w/703/h/744/q/75/i/U1700746237754530934185271783664/windowspopup.png",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/2560px-DVD_logo.svg.png",
+        "https://raw.githubusercontent.com/dodobird181/dodobird181.github.io/e93a327eab25683213cd8cd86cb7e811386fe8c3/logo_full.svg",
       ];
 
       const randImage = () => {
