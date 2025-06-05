@@ -2,61 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DVD Logo Bounce</title>
+  <title>AUDIO friend</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       overflow: hidden;
-      background: white;
+      background-color: white;
+      height: 100%;
+      width: 100%;
     }
+
     #dvd {
       position: absolute;
       width: 100px;
       height: 50px;
+      will-change: transform;
+      user-select: none;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
-  <img id="dvd" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/2560px-DVD_logo.svg.png" />
+  <img
+    id="dvd"
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/2560px-DVD_logo.svg.png"
+  />
+
   <script>
-    const dvd = document.getElementById('dvd');
-    const speed = 3;
+    const dvd = document.getElementById("dvd");
+    const speed = 2.5;
     let dx = speed;
     let dy = speed;
 
-    // Start in a random location
-    let x = Math.random() * (window.innerWidth - dvd.clientWidth);
-    let y = Math.random() * (window.innerHeight - dvd.clientHeight);
+    // Get logo size once it's loaded
+    dvd.onload = () => {
+      start();
+    };
 
-    function animate() {
-      x += dx;
-      y += dy;
+    // Fallback if it loads instantly
+    if (dvd.complete) start();
 
-      // Bounce off left/right
-      if (x + dvd.clientWidth >= window.innerWidth || x <= 0) {
-        dx *= -1;
-        changeColor();
+    let x, y;
+
+    function start() {
+      const logoW = dvd.offsetWidth;
+      const logoH = dvd.offsetHeight;
+
+      x = Math.random() * (window.innerWidth - logoW);
+      y = Math.random() * (window.innerHeight - logoH);
+
+      function animate() {
+        x += dx;
+        y += dy;
+
+        // Bounce off left/right
+        if (x + logoW >= window.innerWidth || x <= 0) {
+          dx *= -1;
+        }
+
+        // Bounce off top/bottom
+        if (y + logoH >= window.innerHeight || y <= 0) {
+          dy *= -1;
+        }
+
+        dvd.style.transform = `translate(${x}px, ${y}px)`;
+
+        requestAnimationFrame(animate);
       }
 
-      // Bounce off top/bottom
-      if (y + dvd.clientHeight >= window.innerHeight || y <= 0) {
-        dy *= -1;
-        changeColor();
-      }
-
-      dvd.style.left = x + 'px';
-      dvd.style.top = y + 'px';
-
-      requestAnimationFrame(animate);
+      animate();
     }
-
-    // Just for fun: change color each bounce
-    function changeColor() {
-      const hue = Math.floor(Math.random() * 360);
-      dvd.style.filter = `hue-rotate(${hue}deg)`;
-    }
-
-    animate();
   </script>
 </body>
 </html>
