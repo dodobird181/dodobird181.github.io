@@ -81,7 +81,7 @@
 
       const logo = document.getElementById("logo");
 
-      let speed = 3;
+      let speed = 2.5;
       if (isMobile()){
         speed = 5;
       }
@@ -89,11 +89,11 @@
       let dy = speed;
 
       if (isMobile()){
-        logo.style.width = '400px';
-        logo.style.height = '200px';
+        logo.style.width = '500px';
+        logo.style.height = '250px';
       } else {
-        logo.style.width = '200px';
-        logo.style.height = '100px';
+        logo.style.width = '500px';
+        logo.style.height = '250px';
       }
       logo.style.fill = "#0ddb21";
       const logoRect = logo.getBoundingClientRect();
