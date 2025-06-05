@@ -57,6 +57,17 @@
 
     window.addEventListener('load', () => {
       const logo = document.getElementById("logo");
+      const srcImages = [
+        "https://freight.cargo.site/w/703/h/744/q/75/i/U1700746237754530934185271783664/windowspopup.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/2560px-DVD_logo.svg.png",
+      ];
+
+      const randImage = () => {
+        const index = Math.round(Math.random() * (srcImages.length - 1));
+        console.log(index);
+        return srcImages[index];
+      };
+
       let speed = 3;
       if (isMobile()){
         speed = 5;
@@ -75,12 +86,13 @@
         y += dy;
 
         if (x + logoW >= window.innerWidth || x <= 0) {
-          dx *= -1;
+            dx *= -1;
+            logo.src = randImage();
         }
 
         if (y + logoH >= window.innerHeight || y <= 0) {
-          dy *= -1;
-
+            dy *= -1;
+            logo.src = randImage();
         }
 
         logo.style.transform = `translate(${x}px, ${y}px)`;
