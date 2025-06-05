@@ -2,6 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+    
+    <!-- Favicon generated links. -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
   <title>AUDIO friend</title>
   <style>
     html, body {
@@ -13,7 +33,7 @@
       width: 100%;
     }
 
-    #dvd {
+    #logo {
       position: absolute;
       width: 200px;
       height: 100px;
@@ -25,19 +45,19 @@
 </head>
 <body>
   <img
-    id="dvd"
+    id="logo"
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/2560px-DVD_logo.svg.png"
   />
 
   <script>
     window.addEventListener('load', () => {
-      const dvd = document.getElementById("dvd");
-      const speed = 2.5;
+      const logo = document.getElementById("logo");
+      const speed = 3;
       let dx = speed;
       let dy = speed;
 
-      const logoW = dvd.offsetWidth;
-      const logoH = dvd.offsetHeight;
+      const logoW = logo.offsetWidth;
+      const logoH = logo.offsetHeight;
 
       let x = Math.random() * (window.innerWidth - logoW);
       let y = Math.random() * (window.innerHeight - logoH);
@@ -48,22 +68,16 @@
 
         if (x + logoW >= window.innerWidth || x <= 0) {
           dx *= -1;
-          changeColor();
         }
 
         if (y + logoH >= window.innerHeight || y <= 0) {
           dy *= -1;
-          changeColor();
+
         }
 
-        dvd.style.transform = `translate(${x}px, ${y}px)`;
+        logo.style.transform = `translate(${x}px, ${y}px)`;
 
         requestAnimationFrame(animate);
-      }
-
-      function changeColor() {
-        const hue = Math.floor(Math.random() * 360);
-        dvd.style.filter = `hue-rotate(${hue}deg)`;
       }
 
       animate();
