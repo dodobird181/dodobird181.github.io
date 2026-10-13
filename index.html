@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,9 +13,16 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@400;500&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@400;500&display=swap">
   <link rel="stylesheet" href="index.css">
+  <!-- Hide the page until fonts load (index.js reveals it); 3s safety net -->
+  <script>
+    document.documentElement.classList.add("fonts-loading");
+    setTimeout(() => document.documentElement.classList.remove("fonts-loading"), 3000);
+  </script>
 </head>
+
 <body>
   <main>
     <section class="frame hero">
@@ -23,9 +31,67 @@
       <a class="scroll-arrow" href="#second" aria-label="Scroll down"></a>
     </section>
     <section class="frame dark" id="second">
+
+      <!-- Row 1: photo left, text right -->
+      <div class="about-row">
+        <img class="about-photo" src="images/headshot.jpg" alt="Sabrina smiling on a city street at night" width="880"
+          height="1100" loading="lazy">
+        <div class="about-text">
+          <h3>Hi, I'm Sabrina</h3>
+          <p>I'm a florist based in Montréal, and I've loved flowers for as long as I can remember. What started as
+            picking bouquets for friends and family has grown into arranging flowers for dinners, celebrations,
+            and everything in between.</p>
+          <p>I like arrangements that feel fresh and natural, with a nice variety of greenery to accompany the flowers
+            themselves. My approach is different for each person, and every piece I make is carefully put together
+            by hand.</p>
+        </div>
+      </div>
+
+      <!-- Row 2: text left, photo right (flipped by the "reverse" class) -->
+      <div class="about-row reverse">
+        <img class="about-photo" src="images/at_work.jpg" alt="Sabrina arranging white and pink gerberas at an event"
+          width="852" height="1066" loading="lazy">
+        <div class="about-text">
+          <h3>What I Do</h3>
+          <p>You can hire me for anniversary dinners, custom bouquets, table arrangements, and other events you have in
+            mind.
+            I'm happy
+            to work with you, no matter
+            your flower needs!</p>
+          <p>Leave me a message so we can discuss your situation, and after that, I'll give you a personalized quote.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact form: emails Sabrina via Web3Forms. Replace YOUR_ACCESS_KEY
+           with the key from https://web3forms.com (sign up with her email). -->
+      <div class="contact" id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="contact-intro">Planning an event or dreaming up a bouquet? Send me a note and I'll get back to you.
+        </p>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="edec2675-1c75-4673-9bd5-10c07885d4da">
+          <input type="hidden" name="subject" value="New message from Sabrina's Flowers">
+          <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
+          <div class="field-row">
+            <label>Name
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>Email
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+          </div>
+          <label>Message
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+          <button type="submit">Send</button>
+          <p class="form-status" role="status"></p>
+        </form>
+      </div>
     </section>
   </main>
   <footer>&copy; <span id="year"></span> Sabrina's Flowers</footer>
   <script src="index.js"></script>
 </body>
+
 </html>

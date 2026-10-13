@@ -1,15 +1,16 @@
-/* Avallon Alt is a paid font (Sam Parrett). Drop the licensed file at
-   fonts/AvallonAlt.woff2 (or .otf/.ttf) and it will be picked up. */
+/* Avallon Alt is a paid font (Sam Parrett), loaded from fonts/AvallonAlt.ttf */
 @font-face {
   font-family: "Avallon Alt";
   src: local("Avallon Alt"), local("AvallonAlt"),
-       url("fonts/AvallonAlt.woff2") format("woff2"),
-       url("fonts/AvallonAlt.otf") format("opentype"),
        url("fonts/AvallonAlt.ttf") format("truetype");
   font-display: swap;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+
+/* Page fades in once fonts are ready (see index.js) */
+body { transition: opacity 0.4s ease; }
+.fonts-loading body { opacity: 0; }
 
 html {
   scroll-behavior: smooth;
@@ -98,6 +99,175 @@ body {
   .scroll-arrow.glimmer { animation: none; }
   .scroll-arrow:hover,
   .scroll-arrow:focus-visible { animation: none; background-position: 50% 0; }
+}
+
+/* About section (black frame) */
+.section-title {
+  margin: 0 0 3rem;
+  font-family: "Avallon Alt", "Pinyon Script", cursive;
+  font-weight: normal;
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  width: 100%;
+  max-width: 960px;
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.about-row:last-child { margin-bottom: 0; }
+
+.about-row.reverse { flex-direction: row-reverse; }
+
+.about-photo {
+  flex: 1 1 50%;
+  min-width: 0;
+  width: 100%;
+  height: auto; /* lets aspect-ratio win over the height attribute */
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.about-text { flex: 1 1 50%; }
+
+.about-text h3 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 500;
+}
+
+.about-text p {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  line-height: 1.55;
+}
+
+/* Small phones only: stack photo above text */
+@media (max-width: 480px) {
+  .about-row,
+  .about-row.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Contact form */
+.contact {
+  width: 100%;
+  max-width: 680px;
+  margin-top: 2rem; /* plus the 4rem below the last photo row */
+  padding-top: 4rem;
+  border-top: 1px solid rgba(246, 244, 240, 0.2);
+}
+
+.contact .section-title { margin-bottom: 0.75rem; }
+
+.contact-intro {
+  margin: 0 auto 3rem;
+  max-width: 32rem;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  line-height: 1.5;
+  color: rgba(246, 244, 240, 0.75);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: left;
+}
+
+.field-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.field-row label { flex: 1; }
+
+/* Small spaced-out caps above each field */
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(246, 244, 240, 0.7);
+}
+
+/* Underline-only fields */
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  font-size: 1.35rem;
+  letter-spacing: normal;
+  text-transform: none;
+  padding: 0.4rem 0;
+  color: #f6f4f0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(246, 244, 240, 0.35);
+  border-radius: 0;
+  transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-bottom-color: #f6f4f0;
+}
+
+.contact-form label:focus-within { color: #f6f4f0; }
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+/* Outlined button that fills in on hover */
+.contact-form button {
+  align-self: center;
+  margin-top: 0.5rem;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 0.9rem 3.5rem;
+  color: #f6f4f0;
+  background: transparent;
+  border: 1px solid #f6f4f0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.contact-form button:hover,
+.contact-form button:focus-visible {
+  color: #000;
+  background: #f6f4f0;
+}
+
+.contact-form button:disabled { opacity: 0.5; cursor: wait; }
+
+.form-status {
+  margin: 0;
+  min-height: 1.5em;
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.hidden { display: none; }
+
+@media (max-width: 480px) {
+  .field-row { flex-direction: column; }
 }
 
 footer {
