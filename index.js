@@ -5,7 +5,7 @@ Promise.all([
   document.fonts.load('500 1em "Cormorant Garamond"'),
 ])
   .catch(() => {})
-  .then(() => document.documentElement.classList.remove("fonts-loading"));
+  .then(() => window.revealPage());
 
 document.getElementById("year").textContent = new Date().getFullYear();
 

@@ -1,16 +1,36 @@
-/* Avallon Alt is a paid font (Sam Parrett), loaded from fonts/AvallonAlt.ttf */
+/* Avallon Alt is a paid font (Sam Parrett). The .woff2 is a Latin-only,
+   compressed copy of the .ttf (305 KB vs 1.4 MB); the .ttf is a fallback. */
 @font-face {
   font-family: "Avallon Alt";
   src: local("Avallon Alt"), local("AvallonAlt"),
+       url("fonts/AvallonAlt.woff2") format("woff2"),
        url("fonts/AvallonAlt.ttf") format("truetype");
   font-display: swap;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
-/* Page fades in once fonts are ready (see index.js) */
-body { transition: opacity 0.4s ease; }
-.fonts-loading body { opacity: 0; }
+/* Loading: only the logo shows, spinning where it will rest. Everything
+   else fades in once fonts are ready (see revealPage in index.html). */
+.title, .scroll-arrow, #second, footer { transition: opacity 0.5s ease; }
+
+.loading .title,
+.loading .scroll-arrow,
+.loading #second,
+.loading footer { opacity: 0; }
+
+/* Keep the hidden title on one line so the logo can't shift on reveal */
+.loading .title { white-space: nowrap; }
+
+.loading .logo { animation: spin 2.5s linear infinite; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading .logo { animation: none; }
+}
 
 html {
   scroll-behavior: smooth;

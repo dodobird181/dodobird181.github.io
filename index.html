@@ -15,11 +15,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@400;500&display=swap">
+  <link rel="preload" href="fonts/AvallonAlt.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="index.css">
-  <!-- Hide the page until fonts load (index.js reveals it); 3s safety net -->
+  <!-- While fonts load, only the logo shows, spinning in place. index.js calls
+       revealPage() once fonts are ready; the timeout is an 8s safety net. -->
   <script>
-    document.documentElement.classList.add("fonts-loading");
-    setTimeout(() => document.documentElement.classList.remove("fonts-loading"), 3000);
+    (() => {
+      const root = document.documentElement;
+      let revealing = false;
+      root.classList.add("loading");
+      window.revealPage = () => {
+        if (revealing) return;
+        revealing = true;
+        const logo = document.querySelector(".logo");
+        const spin = logo && logo.getAnimations().find((a) => a.animationName === "spin");
+        // Wait out the rest of the current turn so the logo lands upright
+        const turn = spin ? spin.effect.getTiming().duration : 0;
+        const left = spin && spin.currentTime != null ? turn - (spin.currentTime % turn) : 0;
+        setTimeout(() => root.classList.remove("loading"), left);
+      };
+      setTimeout(window.revealPage, 8000);
+    })();
   </script>
 </head>
 
